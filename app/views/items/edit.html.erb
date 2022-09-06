@@ -1,0 +1,12 @@
+<h1>Edit Item</h1>
+
+<%= render "form", item: @item %> <br>
+
+<%= link_to "Delete", item_path(@item), data: {
+                    turbo_method: :delete,
+                    turbo_confirm: "Are you sure?"
+                  } %>
+
+<br>
+
+<%= link_to "Home", root_path %>

@@ -1,0 +1,17 @@
+<h1>Hello, Rails...</h1>
+<p>Let's start something usefull here.</p>
+
+<%= link_to "New Item", new_item_path %>
+
+<ul>
+  <% @items.each do |item| %>
+    <li>
+      <%= link_to item.title, item %> | <%= link_to "Edit", edit_item_path(item.id) %> | <%= link_to "Delete", item_path(item.id), data: {
+                    turbo_method: :delete,
+                    turbo_confirm: "Are you sure?"
+                  } %>
+
+<br>
+    </li>
+  <% end %>
+</ul>

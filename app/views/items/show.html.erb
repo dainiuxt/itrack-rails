@@ -1,0 +1,14 @@
+<h1><%= @item.title %></h1>
+
+<p><%= @item.body %></p>
+
+<%= link_to "Edit", edit_item_path(@item) %>
+ | 
+<%= link_to "Delete", item_path(@item), data: {
+                    turbo_method: :delete,
+                    turbo_confirm: "Are you sure?"
+                  } %>
+
+<br>
+
+<%= link_to "Home", root_path %>
