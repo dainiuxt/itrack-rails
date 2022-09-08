@@ -1,21 +1,13 @@
-<%= form_with model: @item do |form| %>
-  <div>
+<%= form_with model: [ @project, @project.items.build ] do |form| %>
+  <p>
     <%= form.label :title %><br>
     <%= form.text_field :title %>
-    <% @item.errors.full_messages_for(:title).each do |message| %>
-      <div><%= message %></div>
-    <% end %>
-  </div>
-
-  <div>
+  </p>
+  <p>
     <%= form.label :body %><br>
     <%= form.text_area :body %>
-    <% @item.errors.full_messages_for(:body).each do |message| %>
-      <div><%= message %></div>
-    <% end %>
-  </div>
-
-  <div>
+  </p>
+  <p>
     <%= form.submit %>
-  </div>
+  </p>
 <% end %>
