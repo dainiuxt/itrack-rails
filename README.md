@@ -1,24 +1,7 @@
-# README
+# Personal issues(bug) tracker
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Portfolio project
 
-Things you may want to cover:
+Version requirements:
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* Ruby 3.1.2, Rails 7.0.3.1

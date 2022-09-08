@@ -6,7 +6,7 @@
 <ul>
   <% @items.each do |item| %>
     <li>
-      <%= link_to item.title, item %> | <%= link_to "Edit", edit_item_path(item.id) %> | <%= link_to "Delete", item_path(item.id), data: {
+      <%= item.proj_id %> <%= link_to item.title, item %> | <%= link_to "Edit", edit_item_path(item.id) %> | <%= link_to "Delete", item_path(item.id), data: {
                     turbo_method: :delete,
                     turbo_confirm: "Are you sure?"
                   } %>
