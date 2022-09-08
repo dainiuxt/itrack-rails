@@ -10,4 +10,8 @@
   <p>
     <%= form.submit %>
   </p>
+
+  <p>
+    <%= form.select :status, ['open', 'in progress', 'resolved', 'archived'], selected: 'open' %>
+  </p>
 <% end %>

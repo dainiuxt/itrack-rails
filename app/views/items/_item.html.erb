@@ -1,3 +1,4 @@
+<% unless item.archived? %>
   <p>
     <strong>Title:</strong>
     <%= item.title %>
@@ -7,3 +8,4 @@
     <strong>Description:</strong>
     <%= item.body %>
   </p>
+<% end %>
