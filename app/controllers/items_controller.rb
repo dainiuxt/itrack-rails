@@ -37,11 +37,11 @@ class ItemsController < ApplicationController
   end
 
   def destroy
-    # @project = Project.find(params[:project_id])
-    @item = Item.find(params[:id])
+    @project = Project.find(params[:project_id])
+    @item = @project.items.find(params[:id])
     @item.destroy
 
-    redirect_to root_path, status: :see_other
+    redirect_to project_path(@project), status: 303
   end
 
   private

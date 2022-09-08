@@ -1,11 +1,19 @@
 <% unless item.archived? %>
   <p>
     <strong>Title:</strong>
-    <%= item.title %>
+    <%= item.title %>, <%= item.status %>
   </p>
 
   <p>
     <strong>Description:</strong>
     <%= item.body %>
   </p>
+
+  <p>
+  <%= link_to "Delete item", [item.project, item], data: {
+                turbo_method: :delete,
+                turbo_confirm: "Are you sure?"
+              } %>
+  </p>
+
 <% end %>

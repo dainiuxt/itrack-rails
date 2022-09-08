@@ -7,11 +7,11 @@
     <%= form.label :body %><br>
     <%= form.text_area :body %>
   </p>
+    <p>
+    <%= form.select :status, ['open', 'in progress', 'resolved', 'archived'], selected: 'open' %>
+  </p>
   <p>
     <%= form.submit %>
   </p>
 
-  <p>
-    <%= form.select :status, ['open', 'in progress', 'resolved', 'archived'], selected: 'open' %>
-  </p>
 <% end %>

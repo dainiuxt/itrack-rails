@@ -17,7 +17,7 @@ Trestle.configure do |config|
 
   # Specify a favicon to be used within the admin.
   #
-  # config.favicon = "favicon.ico"
+  config.favicon = "problem.png"
 
   # Set the text shown in the page footer within the admin.
   # Defaults to 'Powered by Trestle'.
@@ -59,11 +59,11 @@ Trestle.configure do |config|
 
   # Add an explicit menu block to be added to the admin navigation.
   #
-  # config.menu do
-  #   group "Custom Group" do
-  #     item "Custom Link", "/admin/custom", icon: "fa fa-car", badge: { text: "NEW!", class: "label-success" }, priority: :first
-  #   end
-  # end
+  config.menu do
+    group "App front" do
+      item "Home", "/", icon: "fa fa-car", badge: { text: "", class: "label-success" }, priority: :first
+    end
+  end
 
   # == Extension Options
   #
