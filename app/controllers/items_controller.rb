@@ -12,13 +12,9 @@ class ItemsController < ApplicationController
   end
 
   def create
-    @item = Item.new(item_params)
-
-    if @item.save
-      redirect_to @item
-    else
-      render :new, status: :unprocessable_entity
-    end
+    @project = Project.find(params[:project_id])
+    @item = @project.items.create(item_params)
+    redirect_to_project_path(@project)
   end
 
   def edit

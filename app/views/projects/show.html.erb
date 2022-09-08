@@ -11,4 +11,24 @@
 
 <br>
 
+<h2>Items</h2>
+<% @project.items.each do |item| %>
+
+<% end %>
+
+<h2>Add new Item:</h2>
+<%= form_with model: [ @project, @project.items.build ] do |form| %>
+  <p>
+    <%= form.label :title %><br>
+    <%= form.text_field :title %>
+  </p>
+  <p>
+    <%= form.label :body %><br>
+    <%= form.text_area :body %>
+  </p>
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
+
 <%= link_to "Home", root_path %>
