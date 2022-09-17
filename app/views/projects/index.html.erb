@@ -1,5 +1,5 @@
 <h1>Hello, Rails...</h1>
-<p>Let's start something usefull here.</p>
+<p>Let's start <b>something</b> <em>usefull</em> here.</p>
 
 Currently we have <%= Item.open_count %> unresolved issues.
 
@@ -7,7 +7,9 @@ Currently we have <%= Item.open_count %> unresolved issues.
   <% @projects.each do |project| %>
     <% unless project.archived? %>
       <li>
-        <%= link_to project.title, project %> (<%= project.items.length %>) | <%= link_to "Edit", edit_project_path(project.id) %> | <%= link_to "Delete", project_path(project.id), data: {
+        <%= link_to project.title, project %> (<%= project.items.length %>) |
+        <%= link_to "Edit", edit_project_path(project.id) %> |
+        <%= link_to "Delete", project_path(project.id), data: {
                       turbo_method: :delete,
                       turbo_confirm: "Are you sure?"
                     } %>
