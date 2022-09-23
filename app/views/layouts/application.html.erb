@@ -11,50 +11,44 @@
     <%= javascript_importmap_tags %>
     <%= favicon_link_tag asset_path('problem.png') %>
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
-      <style>
-        @media(max-width:1520px) {
-          .left-svg {
-            display: none;
-          }
-        }
-
-        /* small css for the mobile nav close */
-        #nav-mobile-btn.close span:first-child {
-          transform: rotate(45deg);
-          top: 4px;
-          position: relative;
-          background: #a0aec0;
-        }
-
-      #nav-mobile-btn.close span:nth-child(2) {
-        transform: rotate(-45deg);
-        margin-top: 0px;
-        background: #a0aec0;
-      }
-    </style>
   </head>
 
-  <body class="overflow-x-hidden antialiased">
+  <body x-data="setup()" :class="{ 'dark': isDark }">
+    <div class="min-h-screen flex flex-col flex-auto flex-shrink-0 antialiased bg-white dark:bg-gray-700 text-black dark:text-white">
+      <%= render "layouts/nav" %>
+      <%= render "layouts/aside" %>
+      <main class="h-full ml-14 mt-14 mb-10 md:ml-64">
+        
+        <%= yield %>
 
-    <%= render "layouts/top" %>
+        <%= render "layouts/footer" %>
 
-    <%= yield %>
+      </main>
 
-    <%= render 'layouts/footer' %>
-
-    <!-- a little JS for the mobile nav button -->
+    </div>
     <script>
-        if (document.getElementById('nav-mobile-btn')) {
-            document.getElementById('nav-mobile-btn').addEventListener('click', function () {
-                if (this.classList.contains('close')) {
-                    document.getElementById('nav').classList.add('hidden');
-                    this.classList.remove('close');
-                } else {
-                    document.getElementById('nav').classList.remove('hidden');
-                    this.classList.add('close');
-                }
-            });
+      const setup = () => {
+        const getTheme = () => {
+          if (window.localStorage.getItem('dark')) {
+            return JSON.parse(window.localStorage.getItem('dark'))
+          }
+          return !!window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
         }
+
+        const setTheme = (value) => {
+          window.localStorage.setItem('dark', value)
+        }
+
+        return {
+          loading: true,
+          isDark: getTheme(),
+          toggleTheme() {
+            this.isDark = !this.isDark
+            setTheme(this.isDark)
+          },
+        }
+      }
     </script>
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.8.0/dist/alpine.min.js" defer></script>
   </body>
 </html>
