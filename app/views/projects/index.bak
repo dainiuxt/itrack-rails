@@ -557,3 +557,10 @@
         </div>
     </div>
     <!-- End Testimonials-->
+
+                     () |
+                <%= link_to "Edit", edit_project_path(project.id) %> |
+                <%= link_to "Delete", project_path(project.id), data: {
+                        turbo_method: :delete,
+                        turbo_confirm: "Are you sure?"
+                      } %>

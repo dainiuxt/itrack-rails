@@ -4,8 +4,6 @@
 
 
 
-Currently we have <%= Item.open_count %> unresolved issues in <%= Project.count %> projects.
-
   <ul>
     <% @projects.each do |project| %>
       <% unless project.archived? %>
@@ -21,5 +19,5 @@ Currently we have <%= Item.open_count %> unresolved issues in <%= Project.count 
     <% end %>
   </ul>
 
-  <%= link_to "New Project", new_project_path %>
+  
 
