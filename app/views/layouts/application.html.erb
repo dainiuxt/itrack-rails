@@ -6,11 +6,11 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag "application" %>
 
-    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
     <%= favicon_link_tag asset_path('problem.png') %>
-    <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
+    <%# <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
   </head>
 
   <body x-data="setup()" :class="{ 'dark': isDark }">
@@ -27,7 +27,7 @@
 
     </div>
     <script>
-      const setup = () => {
+      var setup = () => {
         const getTheme = () => {
           if (window.localStorage.getItem('dark')) {
             return JSON.parse(window.localStorage.getItem('dark'))
