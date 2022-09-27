@@ -18,7 +18,8 @@
       <%= render "layouts/nav" %>
       <%= render "layouts/aside" %>
       <main class="h-full ml-14 mt-14 mb-10 md:ml-64">
-        
+        <p class="notice"><%= notice %></p>
+        <p class="alert"><%= alert %></p>
         <%= yield %>
 
         <%= render "layouts/footer" %>
