@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   root "projects#index"
-  get 'sample', to: "static_pages#sample"
+  get 'hello', to: "static_pages#hello"
   
   resources :items
   resources :users
