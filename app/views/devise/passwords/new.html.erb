@@ -1,7 +1,7 @@
 <div class="mt-8 mx-4">
   <h2 class="text-3xl sm:text-4xl text-gray-700 dark:text-white font-extrabold tracking-tight mb-4">Forgot your password?</h2>
 
- <form id="new_user" action="/users/password" method="post" class="new_user p-4 bg-blue-50 dark:bg-gray-800 dark:text-gray-50 border border-blue-500 dark:border-gray-500 rounded-lg shadow-md">
+ <form id="new_user" action="/users/password" method="post" class="new_user p-4 bg-blue-50 dark:bg-gray-800 dark:text-gray-50 border border-blue-500 dark:border-gray-500 rounded-lg shadow-md" data-turbo="false">
     <%= render "devise/shared/error_messages", resource: resource %>
     <div class="field">
       <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" autocomplete="off">

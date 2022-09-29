@@ -13,13 +13,18 @@
     <%# <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
   </head>
 
+<% if controller.controller_name != 'static_pages' %>
   <body x-data="setup()" :class="{ 'dark': isDark }">
     <div class="min-h-screen flex flex-col flex-auto flex-shrink-0 antialiased bg-white dark:bg-gray-700 text-black dark:text-white">
-      <%= render "layouts/nav" %>
-      <%= render "layouts/aside" %>
+
+
       <main class="h-full ml-14 mt-14 mb-10 md:ml-64">
-        <p class="notice"><%= notice %></p>
-        <p class="alert"><%= alert %></p>
+
+        <%= render "layouts/nav" %>
+        <%= render "layouts/aside" %>
+
+        <%= render "layouts/alert" %>
+
         <%= yield %>
 
         <%= render "layouts/footer" %>
@@ -52,4 +57,10 @@
     </script>
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.8.0/dist/alpine.min.js" defer></script>
   </body>
+
+<% else %>
+
+  <%= yield %>
+
+<% end %>
 </html>
