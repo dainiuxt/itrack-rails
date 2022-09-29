@@ -1,26 +1,28 @@
-<h2>Log in</h2>
+<div class="mt-8 mx-4">
+  <h2 class="text-3xl sm:text-4xl text-gray-700 dark:text-white font-extrabold tracking-tight mb-4">Log in</h2>
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
-  </div>
-
-  <% if devise_mapping.rememberable? %>
+  <form id="new_user" action="/users/sign_in" method="post" class="new_user p-4 bg-blue-50 dark:bg-gray-800 dark:text-gray-50 border border-blue-500 dark:border-gray-500 rounded-lg shadow-md">
+    <%= render "devise/shared/error_messages" %>
     <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
+      <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" autocomplete="off">
     </div>
-  <% end %>
+    <div class="mb-6 field">
+      <label for="user_email" class="text-md tracking-wide font-semibold text-gray-600 dark:text-gray-400 mb-2 block">Your email</label>
+      <input type="email" id="user_email" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="your@email.com" required="" autofocus="autofocus" autocomplete="email" value name="user[email]">
+    </div>
+    <div class="mb-6 field">
+      <label for="user_password" class="text-md tracking-wide font-semibold text-gray-600 dark:text-gray-400 mb-2 block">Your password</label>
+      <input type="password" id="user_password" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required="" placeholder="Your password" autocomplete="current-password" name="user[password]">
+    </div>
+    <div class="flex items-start mb-6">
+      <div class="flex items-center h-5">
+        <input name="user[remember_me]" type="hidden" value="0" autocomplete="off">
+        <input id="user_remember_me" name="user[remember_me]" type="checkbox" value="1" class="w-4 h-4 bg-gray-50 rounded border border-gray-300 focus:ring-3 focus:ring-blue-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-blue-600 dark:ring-offset-gray-800">
+      </div>
+      <label for="user_remember_me" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Remember me</label>
+    </div>
+    <button type="submit" name="commit" value="Sign up" data-disable-with="Log in" class="md:w-32 bg-blue-600 dark:bg-gray-100 text-white dark:text-gray-800 font-bold py-3 px-6 rounded-lg mt-2 mb-4 hover:bg-blue-500 dark:hover:bg-gray-200 transition ease-in-out duration-300">Login</button>
+  </form>
 
-  <div class="actions">
-    <%= f.submit "Log in" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+  <%= render "devise/shared/links" %>
+</div>

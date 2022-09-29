@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get 'sample', to: "static_pages#sample"
   
   resources :items
+  resources :users
   
   resources :projects do
     resources :items
