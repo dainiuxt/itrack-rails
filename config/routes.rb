@@ -1,8 +1,12 @@
 Rails.application.routes.draw do
   devise_for :users
-  root "projects#index"
-  get 'hello', to: "static_pages#hello"
   
+  authenticated(:user) do
+    root to: "projects#index", as: :authenticated_root
+  end
+  root "static_pages#hello"
+  get 'hello', to: "static_pages#hello"
+
   resources :items
   resources :users
   

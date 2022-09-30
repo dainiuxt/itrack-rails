@@ -1,4 +1,5 @@
 class ItemsController < ApplicationController
+
   def index
     # @project = Project.find(params[:project_id])
     @items = Item.all
@@ -48,4 +49,5 @@ class ItemsController < ApplicationController
     def item_params
       params.require(:item).permit(:title, :body, :status)
     end
+
 end

@@ -1,4 +1,5 @@
 class ProjectsController < ApplicationController
+
   def index
     @projects = Project.all
     @items = Item.all
@@ -6,7 +7,7 @@ class ProjectsController < ApplicationController
 
   def show
     @project = Project.find(params[:id])
-    @item = Item.find(params[:id])
+    # @item = Item.find(params[:id])
   end
 
   def new
@@ -45,7 +46,8 @@ class ProjectsController < ApplicationController
   end
 
   private
-  def project_params
-    params.require(:project).permit(:title, :description, :status)
-  end
+    def project_params
+      params.require(:project).permit(:title, :description, :status)
+    end
+
 end

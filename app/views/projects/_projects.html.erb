@@ -25,7 +25,7 @@
               <% unless project.archived? %>
                 <tr class="text-gray-700 dark:text-gray-100">
                   <th class="border-t-0 px-4 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left"><%= link_to project.title, project %>
-                  <span class="mx-4 px-2 py-1 font-semibold leading-tight text-green-700 bg-green-100 rounded-full dark:bg-green-700 dark:text-green-100"> <%= link_to "Edit", edit_project_path(project.id) %> </span>
+                  <span class="mx-4 px-2 py-1 font-semibold leading-tight text-yellow-700 bg-yellow-100 rounded-full"> <%= link_to "Edit", edit_project_path(project.id) %> </span>
                   <span class="mx-4 px-2 py-1 font-semibold leading-tight text-red-700 bg-red-100 rounded-full dark:text-red-100 dark:bg-red-700"> <%= link_to "Delete", project_path(project.id), data: {
                         turbo_method: :delete,
                         turbo_confirm: "Are you sure?"
