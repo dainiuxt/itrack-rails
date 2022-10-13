@@ -13,3 +13,13 @@
     </li>
   <% end %>
 </ul>
+
+<%= will_paginate @paged_items %>  
+  <% @paged_items.each do |p_item| %>
+    <ul>
+      <li>
+        <%= p_item.title %>
+      </li>
+    </ul>
+  <% end %>      
+<%= will_paginate @paged_items %>

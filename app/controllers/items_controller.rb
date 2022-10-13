@@ -2,6 +2,7 @@ class ItemsController < ApplicationController
 
   def index
     @items = Item.all
+    @paged_items = Item.paginate(:page => params[:page], :per_page=>4)
   end
 
   def show
@@ -44,6 +45,10 @@ class ItemsController < ApplicationController
   private
     def item_params
       params.require(:item).permit(:title, :body, :status, :project_id)
+    end
+
+    def paged_item_params
+      params.require(:item).permit(:title, :body, :status, :project_id, :page)
     end
 
 end

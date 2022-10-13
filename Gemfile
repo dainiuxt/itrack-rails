@@ -9,6 +9,9 @@ gem "rails", "~> 7.0.3", ">= 7.0.3.1"
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
 
+# Pagination
+gem 'will_paginate'
+
 # dev environment improvements
 gem 'better_errors', '~> 2.9', '>= 2.9.1'
 
