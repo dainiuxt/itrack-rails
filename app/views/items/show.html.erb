@@ -3,7 +3,10 @@
     <h2 class="mb-8 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white"><%= @item.title %></h2>
     <div class="mb-10">
       <h3 class="flex items-center mb-4 text-lg font-medium text-gray-900 dark:text-white">
-        <span class="mr-4 px-2 py-1 font-semibold leading-tight text-yellow-700 bg-yellow-100 rounded-full"> <%= link_to "Edit", edit_item_path(@item) %> </span>
+          From project&nbsp;<a href="<%= projects_path %>/<%= @item.project_id %>" class="underline"><%= Project.find(@item.project_id).title %></a>
+      </h3>
+      <h3 class="flex items-center mb-4 text-lg font-medium text-gray-900 dark:text-white">
+        <span class="mr-4 px-2 py-1 font-semibold leading-tight text-yellow-700 bg-yellow-100 rounded-full"> <a href="<%= projects_path %>/<%= @item.project_id %>/items/<%= @item.id %>/edit" class="underline"><%= Project.find(@item.project_id).title %></a> <%= link_to "Edit", edit_item_path(@item) %> </span>
         <span class="mr-4 px-2 py-1 font-semibold leading-tight text-red-700 bg-red-100 rounded-full"> <%= link_to "Delete", item_path(@item), data: {
                     turbo_method: :delete,
                     turbo_confirm: "Are you sure?"

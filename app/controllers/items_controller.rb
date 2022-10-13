@@ -1,33 +1,29 @@
 class ItemsController < ApplicationController
 
   def index
-    # @project = Project.find(params[:project_id])
     @items = Item.all
   end
 
   def show
-    # @project = Project.find(params[:project_id])
     @item = Item.find(params[:id])
   end
 
   def new
-    # @project = Project.find(params[:project_id])
-    @item = Item.new
+    @project = Project.find(params[:project_id])
+    @items = @project.items.build
   end
 
   def create
     @project = Project.find(params[:project_id])
     @item = @project.items.create(item_params)
-    redirect_to(@project)
+    redirect_to project_path(@project)
   end
 
   def edit
-    # @project = Project.find(params[:project_id])
     @item = Item.find(params[:id])
   end
 
   def update
-    # @project = Project.find(params[:project_id])
     @item = Item.find(params[:id])
 
     if @item.update(item_params)
@@ -47,7 +43,7 @@ class ItemsController < ApplicationController
 
   private
     def item_params
-      params.require(:item).permit(:title, :body, :status)
+      params.require(:item).permit(:title, :body, :status, :project_id)
     end
 
 end

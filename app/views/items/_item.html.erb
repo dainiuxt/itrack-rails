@@ -21,6 +21,7 @@
       </div>
   </td>
   <td class="py-4 px-6">
+      <span class="mx-4 px-2 py-1 font-semibold leading-tight text-yellow-700 bg-yellow-100 rounded-full"> <a href="/projects/<%= item.project_id %>/items/<%= item.id %>/edit">Edit</a> </span>
       <%= link_to "Delete item", [item.project, item], class: "font-medium text-blue-600 dark:text-blue-500 hover:underline", data: {
     turbo_method: :delete,
     turbo_confirm: "Are you sure?"
