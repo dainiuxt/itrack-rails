@@ -34,7 +34,12 @@
                   <td class="border-t-0 px-4 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"><%= project.items.open_count %></td>
                   <td class="border-t-0 px-4 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
                     <div class="flex items-center">
-                      <span class="mr-2"><%= progress = rand(0..100) %>%</span>
+                      <span class="mr-2">
+                        <% if project.items.open_count > 0 %>
+                          <%= progress = (100 - project.items.open_count.to_f/project.items.count*100).round() %>
+                        <% else %>
+                          <%= progress = 0 %>
+                        <% end %>%</span>
                       <div class="relative w-full">
                         <div class="overflow-hidden h-2 text-xs flex rounded bg-blue-200">
                           <div style="width: <%= progress %>%" class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-blue-600"></div>
