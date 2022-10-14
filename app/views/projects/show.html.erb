@@ -14,11 +14,11 @@
           Add new Item:
       </h2>
 
-      <%= render 'items/form' %>
+      <%= render 'issues/form' %>
 
     </div>
     <div class="grid pt-8 text-left md:gap-16">
-      <h3 class="mb-2 text-3xl tracking-tight font-extrabold text-gray-900 dark:text-white">Project Items</h3>
+      <h3 class="mb-2 text-3xl tracking-tight font-extrabold text-gray-900 dark:text-white">Project Issues</h3>
     </div>
 
     <div class="grid pt-8 text-left border-t border-gray-200 md:gap-16 dark:border-gray-700">
@@ -80,7 +80,7 @@
             </tr>
         </thead>
         <tbody>
-          <%= render @project.items %>
+          <%= render @project.issues %>
         </tbody>
     </table>
   </div>

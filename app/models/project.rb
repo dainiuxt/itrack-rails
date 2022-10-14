@@ -1,7 +1,7 @@
 class Project < ApplicationRecord
   include Visible
 
-  has_many :items, :dependent => :destroy
+  has_many :issues, :dependent => :destroy
   validates :title, presence: true
   validates :description, presence: true, length: { minimum: 10 }
 

@@ -1,0 +1,17 @@
+<section class="bg-white dark:bg-gray-700">
+  <div class="py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6">
+    <h2 class="mb-8 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">Edit "<%= @issue.title %>" issue</h2>
+    <div class="mb-10">
+      <h3 class="flex items-center mb-4 text-lg font-medium text-gray-900 dark:text-white">
+        Issue status:  <%= @issue.status %>
+        <span class="ml-4 px-2 py-1 font-semibold leading-tight text-red-700 bg-red-100 rounded-full"> <%= link_to "Delete Issue", issue_path(@issue), data: {
+            turbo_method: :delete,
+            turbo_confirm: "Are you sure?"
+          } %> </span>
+      </h3>
+      <p class="text-gray-500 dark:text-gray-400"><%= @issue.body %></p>
+    </div>
+  </div>
+</section>
+
+<%= render "form", issue: @issue %> <br>

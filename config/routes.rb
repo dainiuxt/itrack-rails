@@ -4,14 +4,15 @@ Rails.application.routes.draw do
   authenticated(:user) do
     root to: "projects#index", as: :authenticated_root
   end
+  
   root "static_pages#hello"
   get 'hello', to: "static_pages#hello"
 
-  resources :items
+  resources :issues
   resources :users
   
   resources :projects do
-    resources :items
+    resources :issues
   end
 
 end

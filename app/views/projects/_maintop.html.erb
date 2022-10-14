@@ -17,7 +17,7 @@
       <path fill="none" d="M14.789,6.579H5.211v9.578l1.368,1.368h6.841l1.368-1.368V6.579z M12.052,12.052H7.948c-0.378,0-0.684-0.306-0.684-0.684c0-0.378,0.306-0.684,0.684-0.684h4.105c0.378,0,0.684,0.306,0.684,0.684C12.737,11.746,12.431,12.052,12.052,12.052z M12.052,9.316H7.948c-0.378,0-0.684-0.307-0.684-0.684s0.306-0.684,0.684-0.684h4.105c0.378,0,0.684,0.307,0.684,0.684S12.431,9.316,12.052,9.316z"></path></svg>
     </div>
     <div class="text-right">
-      <p class="text-2xl"><%= Item.open_count %></p>
+      <p class="text-2xl"><%= Issue.open_count %></p>
       <p>Open Issues</p>
     </div>
   </div>
@@ -29,7 +29,7 @@
       <path fill="none" d="M18.887,10.056c-2.749,0.398-6.154,3.206-6.154,9.508h0.933l5.899-2.733L18.887,10.056z"></path></svg>
     </div>
     <div class="text-right">
-      <p class="text-2xl"><%= Item.count - Item.open_count %></p>
+      <p class="text-2xl"><%= Issue.count - Issue.open_count %></p>
       <p>Solved Issues</p>
     </div>
   </div>
@@ -40,7 +40,7 @@
       <path fill="none" d="M12.824,10.412c-0.341-0.228-0.738-0.349-1.146-0.349c-0.694,0-1.338,0.344-1.723,0.92c-0.634,0.949-0.377,2.236,0.571,2.869c0.342,0.228,0.739,0.35,1.147,0.35c0.694,0,1.337-0.344,1.722-0.92C14.029,12.332,13.773,11.045,12.824,10.412z"></path></svg>
     </div>
     <div class="text-right">
-      <p class="text-2xl"><%= Item.count %></p>
+      <p class="text-2xl"><%= Issue.count %></p>
       <p>Issues Total</p>
     </div>
   </div>
