@@ -10,15 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_09_27_144924) do
-  create_table "items", force: :cascade do |t|
+ActiveRecord::Schema[7.0].define(version: 2022_10_18_144241) do
+  create_table "issues", force: :cascade do |t|
     t.string "title"
     t.text "body"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "project_id", default: 0, null: false
     t.string "status"
-    t.index ["project_id"], name: "index_items_on_project_id"
+    t.index ["project_id"], name: "index_issues_on_project_id"
   end
 
   create_table "projects", force: :cascade do |t|
@@ -44,5 +44,5 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_27_144924) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "items", "projects"
+  add_foreign_key "issues", "projects"
 end

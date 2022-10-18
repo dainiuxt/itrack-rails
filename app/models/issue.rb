@@ -1,5 +1,4 @@
 class Issue < ApplicationRecord
-  self.table_name = "items"
   include Visible
   
   belongs_to :project
