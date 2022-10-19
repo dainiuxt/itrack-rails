@@ -5,6 +5,11 @@ class ProjectsController < ApplicationController
     @issues = Issue.all
   end
 
+  def list
+    @projects = Project.all
+    @paged_projects = Project.paginate(:page => params[:page], :per_page=>2)
+  end
+
   def show
     @project = Project.find(params[:id])
     @issue = @project.issues.build
@@ -48,6 +53,10 @@ class ProjectsController < ApplicationController
   private
     def project_params
       params.require(:project).permit(:title, :description, :status)
+    end
+
+    def paged_project_params
+      params.require(:project).permit(:title, :description, :status, :page)
     end
 
 end

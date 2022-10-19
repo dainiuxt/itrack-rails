@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   
   root "static_pages#hello"
   get 'hello', to: "static_pages#hello"
+  get 'projects/list', to: "projects#list"
 
   resources :issues
   resources :users
