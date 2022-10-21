@@ -44,11 +44,11 @@ class IssuesController < ApplicationController
 
   private
     def issue_params
-      params.require(:issue).permit(:title, :body, :status, :project_id)
+      params.require(:issue).permit(:title, :description, :status, :project_id)
     end
 
     def paged_issue_params
-      params.require(:issue).permit(:title, :body, :status, :project_id, :page)
+      params.require(:issue).permit(:title, :description, :status, :project_id, :page)
     end
 
 end
