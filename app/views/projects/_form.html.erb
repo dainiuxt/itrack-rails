@@ -28,7 +28,7 @@
         <div class="form-group mb-6">
           <%= form.label :start, class: "form-check-label inline text-gray-800 dark:text-gray-200" %><br>
           <%= form.date_field :start, class: "form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" %>
-          <% @project.errors.full_messages_for(:title).each do |message| %>
+          <% @project.errors.full_messages_for(:start).each do |message| %>
             <div><%= message %></div>
           <% end %>
         </div>

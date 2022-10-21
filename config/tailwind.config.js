@@ -8,9 +8,9 @@ module.exports = {
     './app/views/**/*.{erb,haml,html,slim}',
     "./node_modules/flowbite/**/*.js",
   ],
-  // plugins: [
-  //   require('flowbite/plugin')
-  // ],
+  plugins: [
+    require('flowbite/plugin')
+  ],
   theme: {
     extend: {
       fontFamily: {
