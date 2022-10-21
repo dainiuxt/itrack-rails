@@ -3,7 +3,7 @@ class Issue < ApplicationRecord
   
   belongs_to :project
   validates :title, presence: true
-  validates :body, presence: true, length: { minimum: 10 }
+  validates :description, presence: true, length: { minimum: 10 }
 
   VALID_STATUSES = ['open', 'in progress', 'resolved', 'archived']
 
