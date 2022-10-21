@@ -3,7 +3,7 @@
     <div class="w-full p-6 bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md dark:bg-gray-800 dark:border-gray-700 sm:p-8">
       <%= form_with model: @project do |form| %>
         <div class="form-group mb-6">
-          <%= form.label :title %><br>
+          <%= form.label :title, class: "form-check-label inline text-gray-800 dark:text-gray-200" %><br>
           <%= form.text_field :title, class: "form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" %>
           <% @project.errors.full_messages_for(:title).each do |message| %>
             <div><%= message %></div>
@@ -11,7 +11,7 @@
         </div>
 
         <div class="form-group mb-6">
-          <%= form.label :description %><br>
+          <%= form.label :description, class: "form-check-label inline text-gray-800 dark:text-gray-200" %><br>
           <%= form.text_area :description, rows: "5", class: "form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" %>
           <% @project.errors.full_messages_for(:description).each do |message| %>
             <div><%= message %></div>
@@ -23,6 +23,14 @@
             <%= form.label :status, class: "form-check-label inline text-gray-800 dark:text-gray-200" %><br>
             <%= form.select(:status, ['active', 'closed', 'archived'], {selected: "active"}, { :class => "form-select appearance-none block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding bg-no-repeat border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"}) %>
           </div>
+        </div>
+
+        <div class="form-group mb-6">
+          <%= form.label :start, class: "form-check-label inline text-gray-800 dark:text-gray-200" %><br>
+          <%= form.date_field :start, class: "form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" %>
+          <% @project.errors.full_messages_for(:title).each do |message| %>
+            <div><%= message %></div>
+          <% end %>
         </div>
 
         <div>

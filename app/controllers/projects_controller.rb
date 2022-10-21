@@ -52,11 +52,11 @@ class ProjectsController < ApplicationController
 
   private
     def project_params
-      params.require(:project).permit(:title, :description, :status)
+      params.require(:project).permit(:title, :description, :status, :start)
     end
 
     def paged_project_params
-      params.require(:project).permit(:title, :description, :status, :page)
+      params.require(:project).permit(:title, :description, :status, :page, :start)
     end
 
 end

@@ -1,5 +1,25 @@
+<!-- Modal toggle -->
+<button class="block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button" data-modal-toggle="authentication-modal">
+  Toggle modal
+</button>
+
+<!-- Main modal -->
+<div id="authentication-modal" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 w-full md:inset-0 h-modal md:h-full">
+    <div class="relative p-4 w-full max-w-md h-full md:h-auto">
+        <!-- Modal content -->
+    <div class="grid pt-8 text-left border-t border-gray-200 md:gap-16 dark:border-gray-900">
+      <h2 class="mb-1 text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
+          Add new Item:
+      </h2>
+
+      <%= render 'issues/form' %>
+
+    </div>
+    </div>
+</div> 
+
 <section class="bg-white dark:bg-gray-700">
-  <div class="py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6">
+  <div class="py-2 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6">
     <h2 class="mb-8 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white"><%= @project.title %></h2>
     <div class="mb-10">
       <h3 class="flex items-center mb-4 text-lg font-medium text-gray-900 dark:text-white">
@@ -8,6 +28,7 @@
           <%= @project.description %>
       </h3>
       <p class="text-gray-500 dark:text-gray-400">Project status:  <%= @project.status %></p>
+      <p class="text-gray-500 dark:text-gray-400">Project start day:  <%= @project.start.to_date %></p>
     </div>
     <div class="grid pt-8 text-left border-t border-gray-200 md:gap-16 dark:border-gray-900">
       <h2 class="mb-1 text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
