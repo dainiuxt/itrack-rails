@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_10_21_091946) do
+ActiveRecord::Schema[7.0].define(version: 2022_11_02_131157) do
   create_table "issues", force: :cascade do |t|
     t.string "title"
     t.text "description"
@@ -38,6 +38,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_21_091946) do
     t.datetime "start"
     t.datetime "target_end"
     t.datetime "actual_end"
+    t.integer "created_by"
+    t.integer "assignrd_to"
   end
 
   create_table "users", force: :cascade do |t|
@@ -51,6 +53,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_21_091946) do
     t.integer "sign_in_count", default: 0, null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
+    t.string "name"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
