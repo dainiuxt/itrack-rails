@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   get 'projects/list', to: "projects#list"
 
   resources :issues
-  resources :users
+  resources :users_admin, :controller => 'users'
   
   resources :projects do
     resources :issues
