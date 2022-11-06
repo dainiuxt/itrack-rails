@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_11_02_134802) do
+ActiveRecord::Schema[7.0].define(version: 2022_11_06_132313) do
   create_table "issues", force: :cascade do |t|
     t.string "title"
     t.text "description"
@@ -39,7 +39,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_02_134802) do
     t.datetime "target_end"
     t.datetime "actual_end"
     t.integer "created_by"
-    t.integer "assignrd_to"
+    t.integer "assigned_to"
   end
 
   create_table "roles", force: :cascade do |t|
