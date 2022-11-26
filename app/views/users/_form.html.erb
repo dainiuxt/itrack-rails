@@ -1,7 +1,7 @@
 <section class="dark:bg-gray-700">
   <div class="flex flex-col items-center justify-center px-6 py-8 mx-auto lg:py-0">
     <div class="w-full p-6 bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md dark:bg-gray-800 dark:border-gray-700 sm:p-8">
-      <%= form_with model: @user, url: new_users_admin_path do |form| %>
+      <%= form_with model: @user, url: users_path do |form| %>
         <div class="form-group mb-6">
           <%= form.label :email, class: "form-check-label inline text-gray-800 dark:text-gray-200" %><br>
           <%= form.email_field :email, class: "form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" %>

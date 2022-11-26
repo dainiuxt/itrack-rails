@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, path: 'auth'
   
   authenticated(:user) do
     root to: "projects#index", as: :authenticated_root
@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   get 'projects/list', to: "projects#list"
 
   resources :issues
-  resources :users_admin, :controller => 'users'
+  resources :users, :controller => 'users'
   
   resources :projects do
     resources :issues
