@@ -1,6 +1,10 @@
-class ProjectsController < ApplicationController
-
+class DashboardsController < ApplicationController
   def index
+    @projects = Project.all
+    @issues = Issue.all
+  end
+
+  def list
     @projects = Project.all
     @paged_projects = Project.paginate(:page => params[:page], :per_page=>2)
   end
@@ -53,5 +57,4 @@ class ProjectsController < ApplicationController
     def paged_project_params
       params.require(:project).permit(:title, :description, :status, :page, :start)
     end
-
 end
