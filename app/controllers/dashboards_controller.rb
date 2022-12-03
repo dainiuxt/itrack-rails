@@ -4,11 +4,6 @@ class DashboardsController < ApplicationController
     @issues = Issue.all
   end
 
-  def list
-    @projects = Project.all
-    @paged_projects = Project.paginate(:page => params[:page], :per_page=>2)
-  end
-
   def show
     @project = Project.find(params[:id])
     @issue = @project.issues.build

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'latest_issues/index'
   devise_for :users, path: 'auth'
   
   authenticated(:user) do
@@ -7,7 +8,6 @@ Rails.application.routes.draw do
   
   root "static_pages#hello"
   get 'hello', to: "static_pages#hello"
-  # get 'projects/list', to: "projects#list"
 
   resources :issues
   resources :users, :controller => 'users'
