@@ -2,6 +2,11 @@ class ProjectsController < ApplicationController
 
   def index
     @projects = Project.all
+    @issues = Issue.all
+  end
+
+  def list
+    @projects = Project.all
     @paged_projects = Project.paginate(:page => params[:page], :per_page=>2)
   end
 

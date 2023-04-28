@@ -13,14 +13,10 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
 
     if @user.save
-      redirect_to @user
+      redirect_to @users
     else
       render :new, status: :unprocessable_entity
     end
-  end
-
-  def show
-    @user = User.find(params[:id])
   end
 
   private
